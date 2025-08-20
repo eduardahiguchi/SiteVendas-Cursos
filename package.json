@@ -1,0 +1,25 @@
+{
+  "name": "sitevendas-cursos",
+  "version": "1.0.0",
+  "description": "Exemplo de aplicação NodeJS / HTTP / FullStack / Frontend",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardahiguchi/SiteVendas-Cursos.git"
+  },
+  "author": "Eduarda Higuchi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eduardahiguchi/SiteVendas-Cursos/issues"
+  },
+  "homepage": "https://github.com/eduardahiguchi/SiteVendas-Cursos#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-session": "^1.18.2"
+  }
+}

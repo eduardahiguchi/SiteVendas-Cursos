@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Cursos Online</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+   body {
+      background: linear-gradient(135deg, #36523d, #2db37b);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .login-card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      padding: 40px 30px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    .login-card h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .form-control {
+      border-radius: 8px;
+    }
+    .btn-login {
+      background: #3d6447;
+      border: none;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 1rem;
+      transition: 0.3s;
+      color: #f1f1f1;
+    }
+    .btn-login:hover {
+      background: #36523d;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-card">
+    <h1>Entrar</h1>
+    <p class="text-muted">Acesse sua conta para ver os cursos</p>
+    <form method="POST" action="/login">
+      <div class="mb-3">
+        <label for="usuario" class="form-label">Usuário</label>
+        <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Digite seu usuário" required>
+      </div>
+      <div class="mb-3">
+        <label for="senha" class="form-label">Senha</label>
+        <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha" required>
+      </div>
+      <button type="submit" class="btn btn-login w-100">Entrar</button>
+    </form>
+    <hr>
+  </div>
+
+  <script>
+    function getQueryParam(param) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(param);
+    }
+
+    const erro = getQueryParam('erro');
+    if (erro === '1') {
+      const loginCard = document.querySelector('.login-card');
+      const mensagemErro = document.createElement('div');
+      mensagemErro.textContent = 'Usuário ou senha incorretos.';
+      mensagemErro.style.color = 'red';
+      mensagemErro.style.marginBottom = '15px';
+      mensagemErro.style.fontWeight = 'bold';
+      loginCard.insertBefore(mensagemErro, loginCard.querySelector('form'));
+    }
+  </script>
+</body>
+</html>
