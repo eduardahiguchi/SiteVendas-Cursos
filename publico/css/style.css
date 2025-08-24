@@ -3,7 +3,7 @@
 
 /*Estilo geral*/
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Nunito', sans-serif;
   background: #f9f9f9;
   margin: 0;
   padding: 0;
@@ -11,7 +11,7 @@ body {
 
 /* Cabeçalho*/
 header {
-  background: linear-gradient(90deg, #36523d, #2db37b);
+  background: linear-gradient(90deg, #7d7ff6, #f84a82);
   color: white;
   text-align: center;
   padding: 2rem 1rem;
@@ -29,9 +29,21 @@ main ul {
   list-style: none;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(1, 1fr); 
   gap: 1.5rem;
   margin: 0 2rem;
+}
+
+@media (min-width: 992px) {
+  main ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  main ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 main ul li {
@@ -52,12 +64,12 @@ main ul li a {
   display: inline-block;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #36523d; /*letras detalhes*/
+  color: #f84a82; /*letras detalhes*/
   text-decoration: none;
 }
 
 main ul li a:hover {
-  color: #36523d;
+  color: #db4273;
   text-decoration: underline;
 }
 
@@ -68,7 +80,7 @@ footer {
 }
 
 footer a {
-  background: #3d6447;
+  background: #7d7ff6;
   color: white;
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
@@ -78,7 +90,7 @@ footer a {
 }
 
 footer a:hover {
-  background: #36523d;
+  background: #6f71da;
 }
 
 /* Container do detalhe do curso */
@@ -93,22 +105,24 @@ footer a:hover {
 
 /* Título do curso */
 #curso-detalhes h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #36523d;
-  text-align: center;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem; 
+    color: #f84a82;
+    text-align: center;
 }
 
 /* Parágrafos */
 #curso-detalhes p {
-  font-size: 1rem;
-  margin-bottom: 0.8rem;
+    font-size: 1rem;
+    margin-bottom: 0.4rem; 
+    
 }
 
 /* Valor total */
 #curso-detalhes #valorTotal {
   font-weight: bold;
-  color: #2db37b;
+  color: #f84a82;
 }
 
 /* Input de quantidade */
@@ -124,7 +138,7 @@ footer a:hover {
 a[href="/menu.html"] {
   display: inline-block;
   margin: 2rem 0 2rem 20rem; 
-  background: #3d6447;
+  background: #7d7ff6;
   color: white;
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
@@ -135,5 +149,21 @@ a[href="/menu.html"] {
 
 
 a[href="/menu.html"]:hover {
-  background: #36523d;
+  background: #6f71da;
+}
+
+#btn-inscrever {
+    background-color: #f84a82;
+    border: none;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    display: block; 
+    width: 250px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#btn-inscrever:hover {
+    background-color: #e74478;
 }

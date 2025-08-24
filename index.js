@@ -29,7 +29,7 @@ app.post('/login', (req, res) => {
     }
 });
 
-app.get('/logout', (req, res) => {
+app.get('/logar', (req, res) => {
     req.session.destroy();
     res.redirect('/login.html');
 });
